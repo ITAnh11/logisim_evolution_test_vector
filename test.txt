@@ -1,0 +1,10 @@
+#Test vector của mạch ghép 2 chiều 2 bit
+Sel IN1 IN2 Out1
+0 	0 	0	0
+0 	0 	1	1
+0 	1 	0	0
+0 	1 	1	1
+1 	0 	0	0
+1 	0 	1	0
+1 	1 	0	1
+1 	1 	1	1
