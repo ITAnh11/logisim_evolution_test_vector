@@ -1,0 +1,6 @@
+#test case bộ cộng nửa bit
+x y s c
+0 0	0 0
+0 1	1 0
+1 0	1 0
+1 1	0 1
