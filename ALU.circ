@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<project source="2.7.1" version="1.0">
-This file is intended to be loaded by Logisim (http://www.cburch.com/logisim/).
-<lib desc="#Wiring" name="0">
+<project source="2.13.8" version="1.0">
+  This file is intended to be loaded by Logisim-evolution (https://github.com/reds-heig/logisim-evolution).
+
+  <lib desc="#Wiring" name="0">
     <tool name="Splitter">
       <a name="fanout" val="4"/>
       <a name="incoming" val="4"/>
@@ -64,6 +65,7 @@ This file is intended to be loaded by Logisim (http://www.cburch.com/logisim/).
     <a name="gateUndefined" val="ignore"/>
     <a name="simlimit" val="1000"/>
     <a name="simrand" val="0"/>
+    <a name="tickmain" val="half_period"/>
   </options>
   <mappings>
     <tool lib="6" map="Button2" name="Menu Tool"/>
@@ -102,6 +104,8 @@ This file is intended to be loaded by Logisim (http://www.cburch.com/logisim/).
     <a name="clabel" val=""/>
     <a name="clabelup" val="east"/>
     <a name="clabelfont" val="SansSerif bold 16"/>
+    <a name="circuitvhdl" val="false"/>
+    <a name="circuitvhdlpath" val=""/>
     <wire from="(190,170)" to="(220,170)"/>
     <wire from="(160,150)" to="(220,150)"/>
     <wire from="(140,220)" to="(200,220)"/>
@@ -126,54 +130,16 @@ This file is intended to be loaded by Logisim (http://www.cburch.com/logisim/).
     <wire from="(180,160)" to="(220,160)"/>
     <wire from="(190,170)" to="(190,200)"/>
     <wire from="(300,110)" to="(370,110)"/>
-    <comp lib="6" loc="(496,132)" name="Text">
-      <a name="text" val="0=-1"/>
-      <a name="font" val="SansSerif bold 14"/>
+    <comp lib="6" loc="(624,104)" name="Text">
+      <a name="text" val="Logic Codes"/>
+      <a name="font" val="SansSerif bolditalic 14"/>
     </comp>
-    <comp lib="6" loc="(500,151)" name="Text">
-      <a name="text" val="1=A-1"/>
-      <a name="font" val="SansSerif bold 14"/>
-    </comp>
-    <comp lib="6" loc="(630,169)" name="Text">
-      <a name="text" val="2 = A + B"/>
-      <a name="font" val="SansSerif bold 14"/>
-    </comp>
-    <comp lib="6" loc="(502,272)" name="Text">
-      <a name="text" val="7=A+1"/>
-      <a name="font" val="SansSerif bold 14"/>
-    </comp>
-    <comp lib="6" loc="(503,251)" name="Text">
-      <a name="text" val="6=A+A"/>
-      <a name="font" val="SansSerif bold 14"/>
-    </comp>
-    <comp lib="0" loc="(380,230)" name="Pin">
-      <a name="facing" val="west"/>
-      <a name="output" val="true"/>
-      <a name="width" val="4"/>
-      <a name="label" val="ALUOut"/>
-    </comp>
-    <comp lib="6" loc="(615,270)" name="Text">
-      <a name="text" val="7=A'"/>
-      <a name="font" val="SansSerif bold 14"/>
-    </comp>
-    <comp lib="6" loc="(507,231)" name="Text">
-      <a name="text" val="5=AB'-1"/>
+    <comp lib="6" loc="(632,208)" name="Text">
+      <a name="text" val="4=A Xor B"/>
       <a name="font" val="SansSerif bold 14"/>
     </comp>
     <comp lib="6" loc="(503,170)" name="Text">
       <a name="text" val="2=A+B"/>
-      <a name="font" val="SansSerif bold 14"/>
-    </comp>
-    <comp lib="0" loc="(140,200)" name="Pin">
-      <a name="width" val="4"/>
-      <a name="label" val="InB"/>
-    </comp>
-    <comp lib="6" loc="(506,210)" name="Text">
-      <a name="text" val="4=AB-1"/>
-      <a name="font" val="SansSerif bold 14"/>
-    </comp>
-    <comp lib="6" loc="(621,130)" name="Text">
-      <a name="text" val="0 = AB"/>
       <a name="font" val="SansSerif bold 14"/>
     </comp>
     <comp lib="6" loc="(81,79)" name="Text">
@@ -181,17 +147,23 @@ This file is intended to be loaded by Logisim (http://www.cburch.com/logisim/).
       <a name="font" val="SansSerif bold 14"/>
       <a name="halign" val="left"/>
     </comp>
-    <comp lib="0" loc="(140,220)" name="Pin">
-      <a name="width" val="3"/>
-      <a name="label" val="Sel"/>
+    <comp lib="6" loc="(496,132)" name="Text">
+      <a name="text" val="0=-1"/>
+      <a name="font" val="SansSerif bold 14"/>
+    </comp>
+    <comp lib="0" loc="(370,170)" name="Pin">
+      <a name="facing" val="west"/>
+      <a name="output" val="true"/>
+      <a name="label" val="Cmp"/>
     </comp>
     <comp lib="0" loc="(140,180)" name="Pin">
       <a name="width" val="4"/>
       <a name="label" val="InA"/>
     </comp>
-    <comp lib="6" loc="(632,208)" name="Text">
-      <a name="text" val="4=A Xor B"/>
-      <a name="font" val="SansSerif bold 14"/>
+    <comp lib="0" loc="(370,110)" name="Pin">
+      <a name="facing" val="west"/>
+      <a name="output" val="true"/>
+      <a name="label" val="COut"/>
     </comp>
     <comp lib="0" loc="(140,160)" name="Pin">
       <a name="label" val="CIn"/>
@@ -200,18 +172,13 @@ This file is intended to be loaded by Logisim (http://www.cburch.com/logisim/).
       <a name="text" val="5=AB'"/>
       <a name="font" val="SansSerif bold 14"/>
     </comp>
-    <comp lib="6" loc="(502,190)" name="Text">
-      <a name="text" val="3=A-B"/>
+    <comp lib="6" loc="(630,169)" name="Text">
+      <a name="text" val="2 = A + B"/>
       <a name="font" val="SansSerif bold 14"/>
     </comp>
-    <comp lib="6" loc="(557,304)" name="Text">
-      <a name="text" val="Mode: H (1) = Logic, L (0) = Arithmetic"/>
+    <comp lib="6" loc="(615,270)" name="Text">
+      <a name="text" val="7=A'"/>
       <a name="font" val="SansSerif bold 14"/>
-    </comp>
-    <comp lib="0" loc="(370,110)" name="Pin">
-      <a name="facing" val="west"/>
-      <a name="output" val="true"/>
-      <a name="label" val="COut"/>
     </comp>
     <comp lib="6" loc="(636,188)" name="Text">
       <a name="text" val="3 = (A + B)'"/>
@@ -221,28 +188,65 @@ This file is intended to be loaded by Logisim (http://www.cburch.com/logisim/).
       <a name="text" val="Arithmetic Codes"/>
       <a name="font" val="SansSerif bolditalic 14"/>
     </comp>
-    <comp lib="0" loc="(370,170)" name="Pin">
-      <a name="facing" val="west"/>
-      <a name="output" val="true"/>
-      <a name="label" val="Cmp"/>
+    <comp lib="6" loc="(624,252)" name="Text">
+      <a name="text" val="6=A+B'"/>
+      <a name="font" val="SansSerif bold 14"/>
+    </comp>
+    <comp lib="6" loc="(557,304)" name="Text">
+      <a name="text" val="Mode: H (1) = Logic, L (0) = Arithmetic"/>
+      <a name="font" val="SansSerif bold 14"/>
+    </comp>
+    <comp loc="(250,160)" name="ALU">
+      <a name="label" val="ALU"/>
+    </comp>
+    <comp lib="0" loc="(140,220)" name="Pin">
+      <a name="width" val="3"/>
+      <a name="label" val="Sel"/>
+    </comp>
+    <comp lib="0" loc="(140,240)" name="Pin">
+      <a name="label" val="Mode"/>
+    </comp>
+    <comp lib="6" loc="(503,251)" name="Text">
+      <a name="text" val="6=A+A"/>
+      <a name="font" val="SansSerif bold 14"/>
+    </comp>
+    <comp lib="6" loc="(502,190)" name="Text">
+      <a name="text" val="3=A-B"/>
+      <a name="font" val="SansSerif bold 14"/>
+    </comp>
+    <comp lib="6" loc="(506,210)" name="Text">
+      <a name="text" val="4=AB-1"/>
+      <a name="font" val="SansSerif bold 14"/>
+    </comp>
+    <comp lib="6" loc="(621,130)" name="Text">
+      <a name="text" val="0 = AB"/>
+      <a name="font" val="SansSerif bold 14"/>
+    </comp>
+    <comp lib="6" loc="(502,272)" name="Text">
+      <a name="text" val="7=A+1"/>
+      <a name="font" val="SansSerif bold 14"/>
     </comp>
     <comp lib="6" loc="(627,149)" name="Text">
       <a name="text" val="1 = (AB)'"/>
       <a name="font" val="SansSerif bold 14"/>
     </comp>
-    <comp lib="0" loc="(140,240)" name="Pin">
-      <a name="label" val="Mode"/>
-    </comp>
-    <comp loc="(250,160)" name="ALU">
-      <a name="label" val="ALU"/>
-    </comp>
-    <comp lib="6" loc="(624,252)" name="Text">
-      <a name="text" val="6=A+B'"/>
+    <comp lib="6" loc="(507,231)" name="Text">
+      <a name="text" val="5=AB'-1"/>
       <a name="font" val="SansSerif bold 14"/>
     </comp>
-    <comp lib="6" loc="(624,104)" name="Text">
-      <a name="text" val="Logic Codes"/>
-      <a name="font" val="SansSerif bolditalic 14"/>
+    <comp lib="0" loc="(140,200)" name="Pin">
+      <a name="width" val="4"/>
+      <a name="label" val="InB"/>
+    </comp>
+    <comp lib="6" loc="(500,151)" name="Text">
+      <a name="text" val="1=A-1"/>
+      <a name="font" val="SansSerif bold 14"/>
+    </comp>
+    <comp lib="0" loc="(380,230)" name="Pin">
+      <a name="facing" val="west"/>
+      <a name="output" val="true"/>
+      <a name="width" val="4"/>
+      <a name="label" val="ALUOut"/>
     </comp>
   </circuit>
   <circuit name="ALU">
@@ -250,6 +254,8 @@ This file is intended to be loaded by Logisim (http://www.cburch.com/logisim/).
     <a name="clabel" val=""/>
     <a name="clabelup" val="east"/>
     <a name="clabelfont" val="SansSerif bold 16"/>
+    <a name="circuitvhdl" val="false"/>
+    <a name="circuitvhdlpath" val=""/>
     <wire from="(570,100)" to="(690,100)"/>
     <wire from="(140,240)" to="(200,240)"/>
     <wire from="(220,80)" to="(220,90)"/>
@@ -287,112 +293,14 @@ This file is intended to be loaded by Logisim (http://www.cburch.com/logisim/).
     <wire from="(720,100)" to="(800,100)"/>
     <wire from="(390,170)" to="(460,170)"/>
     <wire from="(180,210)" to="(310,210)"/>
-    <comp lib="6" loc="(758,94)" name="Text">
-      <a name="text" val="Logic Codes"/>
-      <a name="font" val="SansSerif bolditalic 14"/>
-    </comp>
-    <comp lib="6" loc="(762,198)" name="Text">
-      <a name="text" val="4=A Xor B"/>
-      <a name="font" val="SansSerif bold 14"/>
-    </comp>
-    <comp lib="6" loc="(752,157)" name="Text">
-      <a name="text" val="2=A+B"/>
-      <a name="font" val="SansSerif bold 14"/>
-    </comp>
-    <comp lib="6" loc="(632,262)" name="Text">
-      <a name="text" val="7=A+1"/>
-      <a name="font" val="SansSerif bold 14"/>
-    </comp>
-    <comp lib="0" loc="(150,90)" name="Pin">
-      <a name="width" val="4"/>
-      <a name="label" val="InA"/>
-    </comp>
-    <comp lib="6" loc="(636,200)" name="Text">
-      <a name="text" val="4=AB-1"/>
-      <a name="font" val="SansSerif bold 14"/>
-    </comp>
-    <comp lib="6" loc="(747,120)" name="Text">
-      <a name="text" val="0=AB"/>
-      <a name="font" val="SansSerif bold 14"/>
-    </comp>
     <comp lib="6" loc="(626,122)" name="Text">
       <a name="text" val="0=-1"/>
       <a name="font" val="SansSerif bold 14"/>
-    </comp>
-    <comp lib="6" loc="(632,180)" name="Text">
-      <a name="text" val="3=A-B"/>
-      <a name="font" val="SansSerif bold 14"/>
-    </comp>
-    <comp loc="(330,70)" name="Arithmetic"/>
-    <comp lib="6" loc="(630,141)" name="Text">
-      <a name="text" val="1=A-1"/>
-      <a name="font" val="SansSerif bold 14"/>
-    </comp>
-    <comp lib="6" loc="(758,178)" name="Text">
-      <a name="text" val="3=(A+B)'"/>
-      <a name="font" val="SansSerif bold 14"/>
-    </comp>
-    <comp lib="0" loc="(130,70)" name="Pin">
-      <a name="label" val="CIn"/>
-    </comp>
-    <comp lib="6" loc="(754,242)" name="Text">
-      <a name="text" val="6=A+B'"/>
-      <a name="font" val="SansSerif bold 14"/>
-    </comp>
-    <comp lib="0" loc="(150,210)" name="Pin">
-      <a name="width" val="4"/>
-      <a name="label" val="InB"/>
-    </comp>
-    <comp lib="6" loc="(628,94)" name="Text">
-      <a name="text" val="Arithmetic Codes"/>
-      <a name="font" val="SansSerif bolditalic 14"/>
-    </comp>
-    <comp lib="6" loc="(674,286)" name="Text">
-      <a name="text" val="Mode: 1 = Logic, 0 = Arithmetic"/>
-      <a name="font" val="SansSerif bold 14"/>
-    </comp>
-    <comp lib="0" loc="(450,110)" name="Pin">
-      <a name="facing" val="west"/>
-      <a name="output" val="true"/>
-      <a name="tristate" val="false"/>
-      <a name="label" val="Cmp"/>
-    </comp>
-    <comp lib="6" loc="(637,221)" name="Text">
-      <a name="text" val="5=AB'-1"/>
-      <a name="font" val="SansSerif bold 14"/>
-    </comp>
-    <comp lib="2" loc="(390,170)" name="Multiplexer">
-      <a name="width" val="4"/>
-      <a name="enable" val="false"/>
     </comp>
     <comp lib="0" loc="(140,240)" name="Pin">
       <a name="width" val="3"/>
       <a name="label" val="Sel"/>
     </comp>
-    <comp lib="6" loc="(232,313)" name="Text">
-      <a name="text" val="Mode: 1 = Logic, 0 = Arithmetic"/>
-      <a name="font" val="SansSerif bold 14"/>
-    </comp>
-    <comp lib="0" loc="(450,80)" name="Pin">
-      <a name="facing" val="west"/>
-      <a name="output" val="true"/>
-      <a name="label" val="COut"/>
-    </comp>
-    <comp lib="0" loc="(460,170)" name="Pin">
-      <a name="facing" val="west"/>
-      <a name="output" val="true"/>
-      <a name="width" val="4"/>
-      <a name="label" val="ALUOut"/>
-    </comp>
-    <comp lib="6" loc="(751,221)" name="Text">
-      <a name="text" val="5=AB'"/>
-      <a name="font" val="SansSerif bold 14"/>
-    </comp>
-    <comp lib="6" loc="(745,260)" name="Text">
-      <a name="text" val="7=A'"/>
-      <a name="font" val="SansSerif bold 14"/>
-    </comp>
-    <comp loc="(340,200)" name="Logic"/>
     <comp lib="0" loc="(130,280)" name="Pin">
       <a name="label" val="Mode"/>
     </comp>
@@ -400,12 +308,109 @@ This file is intended to be loaded by Logisim (http://www.cburch.com/logisim/).
       <a name="text" val="2=A+B"/>
       <a name="font" val="SansSerif bold 14"/>
     </comp>
+    <comp lib="6" loc="(747,120)" name="Text">
+      <a name="text" val="0=AB"/>
+      <a name="font" val="SansSerif bold 14"/>
+    </comp>
+    <comp lib="6" loc="(632,262)" name="Text">
+      <a name="text" val="7=A+1"/>
+      <a name="font" val="SansSerif bold 14"/>
+    </comp>
+    <comp lib="6" loc="(637,221)" name="Text">
+      <a name="text" val="5=AB'-1"/>
+      <a name="font" val="SansSerif bold 14"/>
+    </comp>
+    <comp lib="0" loc="(450,80)" name="Pin">
+      <a name="facing" val="west"/>
+      <a name="output" val="true"/>
+      <a name="label" val="COut"/>
+    </comp>
+    <comp lib="6" loc="(628,94)" name="Text">
+      <a name="text" val="Arithmetic Codes"/>
+      <a name="font" val="SansSerif bolditalic 14"/>
+    </comp>
     <comp lib="6" loc="(633,241)" name="Text">
       <a name="text" val="6=A+A"/>
       <a name="font" val="SansSerif bold 14"/>
     </comp>
+    <comp lib="6" loc="(752,157)" name="Text">
+      <a name="text" val="2=A+B"/>
+      <a name="font" val="SansSerif bold 14"/>
+    </comp>
+    <comp lib="6" loc="(762,198)" name="Text">
+      <a name="text" val="4=A Xor B"/>
+      <a name="font" val="SansSerif bold 14"/>
+    </comp>
+    <comp lib="6" loc="(632,180)" name="Text">
+      <a name="text" val="3=A-B"/>
+      <a name="font" val="SansSerif bold 14"/>
+    </comp>
+    <comp lib="0" loc="(460,170)" name="Pin">
+      <a name="facing" val="west"/>
+      <a name="output" val="true"/>
+      <a name="width" val="4"/>
+      <a name="label" val="ALUOut"/>
+    </comp>
+    <comp lib="2" loc="(390,170)" name="Multiplexer">
+      <a name="width" val="4"/>
+      <a name="enable" val="false"/>
+    </comp>
+    <comp lib="6" loc="(630,141)" name="Text">
+      <a name="text" val="1=A-1"/>
+      <a name="font" val="SansSerif bold 14"/>
+    </comp>
+    <comp lib="0" loc="(150,90)" name="Pin">
+      <a name="width" val="4"/>
+      <a name="label" val="InA"/>
+    </comp>
+    <comp lib="6" loc="(754,242)" name="Text">
+      <a name="text" val="6=A+B'"/>
+      <a name="font" val="SansSerif bold 14"/>
+    </comp>
+    <comp lib="6" loc="(232,313)" name="Text">
+      <a name="text" val="Mode: 1 = Logic, 0 = Arithmetic"/>
+      <a name="font" val="SansSerif bold 14"/>
+    </comp>
+    <comp lib="6" loc="(636,200)" name="Text">
+      <a name="text" val="4=AB-1"/>
+      <a name="font" val="SansSerif bold 14"/>
+    </comp>
+    <comp loc="(340,200)" name="Logic"/>
+    <comp lib="6" loc="(758,94)" name="Text">
+      <a name="text" val="Logic Codes"/>
+      <a name="font" val="SansSerif bolditalic 14"/>
+    </comp>
+    <comp lib="0" loc="(450,110)" name="Pin">
+      <a name="facing" val="west"/>
+      <a name="output" val="true"/>
+      <a name="label" val="Cmp"/>
+    </comp>
     <comp lib="6" loc="(754,138)" name="Text">
       <a name="text" val="1=(AB)'"/>
+      <a name="font" val="SansSerif bold 14"/>
+    </comp>
+    <comp lib="0" loc="(130,70)" name="Pin">
+      <a name="label" val="CIn"/>
+    </comp>
+    <comp lib="0" loc="(150,210)" name="Pin">
+      <a name="width" val="4"/>
+      <a name="label" val="InB"/>
+    </comp>
+    <comp lib="6" loc="(745,260)" name="Text">
+      <a name="text" val="7=A'"/>
+      <a name="font" val="SansSerif bold 14"/>
+    </comp>
+    <comp lib="6" loc="(758,178)" name="Text">
+      <a name="text" val="3=(A+B)'"/>
+      <a name="font" val="SansSerif bold 14"/>
+    </comp>
+    <comp lib="6" loc="(751,221)" name="Text">
+      <a name="text" val="5=AB'"/>
+      <a name="font" val="SansSerif bold 14"/>
+    </comp>
+    <comp loc="(330,70)" name="Arithmetic"/>
+    <comp lib="6" loc="(674,286)" name="Text">
+      <a name="text" val="Mode: 1 = Logic, 0 = Arithmetic"/>
       <a name="font" val="SansSerif bold 14"/>
     </comp>
   </circuit>
@@ -414,6 +419,8 @@ This file is intended to be loaded by Logisim (http://www.cburch.com/logisim/).
     <a name="clabel" val=""/>
     <a name="clabelup" val="east"/>
     <a name="clabelfont" val="SansSerif bold 16"/>
+    <a name="circuitvhdl" val="false"/>
+    <a name="circuitvhdlpath" val=""/>
     <wire from="(220,210)" to="(280,210)"/>
     <wire from="(420,100)" to="(470,100)"/>
     <wire from="(190,310)" to="(240,310)"/>
@@ -530,9 +537,71 @@ This file is intended to be loaded by Logisim (http://www.cburch.com/logisim/).
     <wire from="(280,300)" to="(350,300)"/>
     <wire from="(470,370)" to="(470,490)"/>
     <wire from="(210,440)" to="(210,500)"/>
+    <comp lib="2" loc="(520,310)" name="Multiplexer">
+      <a name="select" val="3"/>
+      <a name="width" val="4"/>
+      <a name="enable" val="false"/>
+    </comp>
+    <comp lib="6" loc="(60,81)" name="Text">
+      <a name="text" val="1=A-1"/>
+      <a name="font" val="SansSerif bold 14"/>
+    </comp>
     <comp lib="0" loc="(180,190)" name="Pin">
       <a name="width" val="4"/>
       <a name="label" val="InB"/>
+    </comp>
+    <comp lib="6" loc="(62,120)" name="Text">
+      <a name="text" val="3=A-B"/>
+      <a name="font" val="SansSerif bold 14"/>
+    </comp>
+    <comp lib="3" loc="(360,380)" name="Subtractor">
+      <a name="width" val="4"/>
+    </comp>
+    <comp lib="0" loc="(180,110)" name="Pin">
+      <a name="width" val="4"/>
+      <a name="label" val="InA"/>
+    </comp>
+    <comp lib="6" loc="(67,161)" name="Text">
+      <a name="text" val="5=AB'-1"/>
+      <a name="font" val="SansSerif bold 14"/>
+    </comp>
+    <comp lib="0" loc="(570,430)" name="Pin">
+      <a name="facing" val="west"/>
+      <a name="output" val="true"/>
+      <a name="label" val="COut"/>
+    </comp>
+    <comp lib="6" loc="(66,140)" name="Text">
+      <a name="text" val="4=AB-1"/>
+      <a name="font" val="SansSerif bold 14"/>
+    </comp>
+    <comp lib="0" loc="(500,390)" name="Constant">
+      <a name="value" val="0x0"/>
+    </comp>
+    <comp lib="3" loc="(300,450)" name="Adder">
+      <a name="width" val="4"/>
+    </comp>
+    <comp lib="0" loc="(300,320)" name="Constant">
+      <a name="width" val="4"/>
+    </comp>
+    <comp lib="1" loc="(250,380)" name="NOT Gate">
+      <a name="width" val="4"/>
+      <a name="size" val="20"/>
+    </comp>
+    <comp lib="1" loc="(420,100)" name="NOT Gate">
+      <a name="width" val="4"/>
+    </comp>
+    <comp lib="0" loc="(460,550)" name="Pin">
+      <a name="width" val="3"/>
+      <a name="label" val="Sel"/>
+    </comp>
+    <comp lib="0" loc="(540,310)" name="Pin">
+      <a name="facing" val="west"/>
+      <a name="output" val="true"/>
+      <a name="width" val="4"/>
+      <a name="label" val="ArOut"/>
+    </comp>
+    <comp lib="0" loc="(380,100)" name="Constant">
+      <a name="width" val="4"/>
     </comp>
     <comp lib="3" loc="(320,120)" name="Subtractor">
       <a name="width" val="4"/>
@@ -541,128 +610,64 @@ This file is intended to be loaded by Logisim (http://www.cburch.com/logisim/).
       <a name="text" val="Arithmetic Subcircuit"/>
       <a name="font" val="SansSerif bolditalic 14"/>
     </comp>
-    <comp lib="6" loc="(62,202)" name="Text">
-      <a name="text" val="7=A+1"/>
-      <a name="font" val="SansSerif bold 14"/>
-    </comp>
-    <comp lib="6" loc="(62,120)" name="Text">
-      <a name="text" val="3=A-B"/>
-      <a name="font" val="SansSerif bold 14"/>
-    </comp>
-    <comp lib="1" loc="(420,100)" name="NOT Gate">
-      <a name="width" val="4"/>
-    </comp>
-    <comp lib="3" loc="(300,370)" name="Multiplier">
-      <a name="width" val="4"/>
-    </comp>
-    <comp lib="0" loc="(460,550)" name="Pin">
-      <a name="width" val="3"/>
-      <a name="tristate" val="false"/>
-      <a name="label" val="Sel"/>
-    </comp>
-    <comp lib="3" loc="(290,510)" name="Adder">
-      <a name="width" val="4"/>
-    </comp>
-    <comp lib="6" loc="(60,81)" name="Text">
-      <a name="text" val="1=A-1"/>
-      <a name="font" val="SansSerif bold 14"/>
-    </comp>
-    <comp lib="3" loc="(310,240)" name="Subtractor">
-      <a name="width" val="4"/>
-    </comp>
-    <comp lib="0" loc="(500,390)" name="Constant">
-      <a name="value" val="0x0"/>
-    </comp>
-    <comp lib="1" loc="(250,380)" name="NOT Gate">
-      <a name="width" val="4"/>
-      <a name="size" val="20"/>
-    </comp>
-    <comp lib="6" loc="(67,161)" name="Text">
-      <a name="text" val="5=AB'-1"/>
-      <a name="font" val="SansSerif bold 14"/>
-    </comp>
-    <comp lib="0" loc="(250,130)" name="Constant">
-      <a name="width" val="4"/>
-    </comp>
-    <comp lib="0" loc="(570,430)" name="Pin">
-      <a name="facing" val="west"/>
-      <a name="output" val="true"/>
-      <a name="label" val="COut"/>
-    </comp>
-    <comp lib="0" loc="(310,580)" name="Pin">
-      <a name="facing" val="west"/>
-      <a name="output" val="true"/>
-      <a name="label" val="Cmp"/>
-    </comp>
-    <comp lib="6" loc="(66,140)" name="Text">
-      <a name="text" val="4=AB-1"/>
-      <a name="font" val="SansSerif bold 14"/>
-    </comp>
-    <comp lib="0" loc="(300,320)" name="Constant">
-      <a name="width" val="4"/>
-    </comp>
-    <comp lib="0" loc="(180,110)" name="Pin">
-      <a name="width" val="4"/>
-      <a name="label" val="InA"/>
-    </comp>
-    <comp lib="3" loc="(390,310)" name="Subtractor">
-      <a name="width" val="4"/>
-    </comp>
-    <comp lib="0" loc="(380,100)" name="Constant">
-      <a name="width" val="4"/>
-    </comp>
-    <comp lib="6" loc="(63,181)" name="Text">
-      <a name="text" val="6=A+A"/>
-      <a name="font" val="SansSerif bold 14"/>
-    </comp>
-    <comp lib="0" loc="(300,400)" name="Constant">
-      <a name="width" val="4"/>
-    </comp>
-    <comp lib="6" loc="(56,62)" name="Text">
-      <a name="text" val="0=-1"/>
-      <a name="font" val="SansSerif bold 14"/>
-    </comp>
-    <comp lib="3" loc="(310,180)" name="Adder">
-      <a name="width" val="4"/>
-    </comp>
     <comp lib="0" loc="(240,520)" name="Constant">
       <a name="width" val="4"/>
     </comp>
-    <comp lib="3" loc="(300,450)" name="Adder">
+    <comp lib="0" loc="(250,130)" name="Constant">
       <a name="width" val="4"/>
     </comp>
     <comp lib="2" loc="(550,430)" name="Multiplexer">
       <a name="select" val="3"/>
       <a name="enable" val="false"/>
     </comp>
-    <comp lib="0" loc="(540,310)" name="Pin">
+    <comp lib="0" loc="(180,80)" name="Pin">
+      <a name="label" val="CIn"/>
+    </comp>
+    <comp lib="3" loc="(290,580)" name="Comparator">
+      <a name="width" val="4"/>
+      <a name="mode" val="unsigned"/>
+    </comp>
+    <comp lib="3" loc="(310,240)" name="Subtractor">
+      <a name="width" val="4"/>
+    </comp>
+    <comp lib="6" loc="(56,62)" name="Text">
+      <a name="text" val="0=-1"/>
+      <a name="font" val="SansSerif bold 14"/>
+    </comp>
+    <comp lib="3" loc="(300,370)" name="Multiplier">
+      <a name="width" val="4"/>
+    </comp>
+    <comp lib="6" loc="(63,181)" name="Text">
+      <a name="text" val="6=A+A"/>
+      <a name="font" val="SansSerif bold 14"/>
+    </comp>
+    <comp lib="0" loc="(310,580)" name="Pin">
       <a name="facing" val="west"/>
       <a name="output" val="true"/>
-      <a name="width" val="4"/>
-      <a name="label" val="ArOut"/>
+      <a name="label" val="Cmp"/>
     </comp>
     <comp lib="6" loc="(63,100)" name="Text">
       <a name="text" val="2=A+B"/>
       <a name="font" val="SansSerif bold 14"/>
     </comp>
-    <comp lib="2" loc="(520,310)" name="Multiplexer">
-      <a name="select" val="3"/>
-      <a name="width" val="4"/>
-      <a name="enable" val="false"/>
-    </comp>
-    <comp lib="3" loc="(360,380)" name="Subtractor">
+    <comp lib="0" loc="(300,400)" name="Constant">
       <a name="width" val="4"/>
     </comp>
-    <comp lib="0" loc="(180,80)" name="Pin">
-      <a name="tristate" val="false"/>
-      <a name="label" val="CIn"/>
+    <comp lib="3" loc="(390,310)" name="Subtractor">
+      <a name="width" val="4"/>
     </comp>
     <comp lib="3" loc="(280,300)" name="Multiplier">
       <a name="width" val="4"/>
     </comp>
-    <comp lib="3" loc="(290,580)" name="Comparator">
+    <comp lib="3" loc="(290,510)" name="Adder">
       <a name="width" val="4"/>
-      <a name="mode" val="unsigned"/>
+    </comp>
+    <comp lib="3" loc="(310,180)" name="Adder">
+      <a name="width" val="4"/>
+    </comp>
+    <comp lib="6" loc="(62,202)" name="Text">
+      <a name="text" val="7=A+1"/>
+      <a name="font" val="SansSerif bold 14"/>
     </comp>
   </circuit>
   <circuit name="Logic">
@@ -670,6 +675,8 @@ This file is intended to be loaded by Logisim (http://www.cburch.com/logisim/).
     <a name="clabel" val=""/>
     <a name="clabelup" val="east"/>
     <a name="clabelfont" val="SansSerif bold 16"/>
+    <a name="circuitvhdl" val="false"/>
+    <a name="circuitvhdlpath" val=""/>
     <wire from="(610,160)" to="(610,360)"/>
     <wire from="(490,260)" to="(550,260)"/>
     <wire from="(280,420)" to="(330,420)"/>
@@ -729,15 +736,6 @@ This file is intended to be loaded by Logisim (http://www.cburch.com/logisim/).
     <wire from="(610,160)" to="(690,160)"/>
     <wire from="(430,110)" to="(690,110)"/>
     <wire from="(490,120)" to="(690,120)"/>
-    <comp lib="0" loc="(710,490)" name="Pin">
-      <a name="facing" val="north"/>
-      <a name="width" val="3"/>
-      <a name="label" val="Sel"/>
-    </comp>
-    <comp lib="6" loc="(88,130)" name="Text">
-      <a name="text" val="3=(A+B)'"/>
-      <a name="font" val="SansSerif bold 14"/>
-    </comp>
     <comp lib="2" loc="(730,150)" name="Multiplexer">
       <a name="select" val="3"/>
       <a name="width" val="4"/>
@@ -747,39 +745,48 @@ This file is intended to be loaded by Logisim (http://www.cburch.com/logisim/).
       <a name="text" val="1=(AB)'"/>
       <a name="font" val="SansSerif bold 14"/>
     </comp>
+    <comp lib="0" loc="(260,100)" name="Pin">
+      <a name="width" val="4"/>
+      <a name="label" val="InA"/>
+    </comp>
+    <comp lib="6" loc="(83,189)" name="Text">
+      <a name="text" val="6=A+B'"/>
+      <a name="font" val="SansSerif bold 14"/>
+    </comp>
+    <comp lib="1" loc="(430,110)" name="AND Gate">
+      <a name="width" val="4"/>
+      <a name="size" val="30"/>
+    </comp>
     <comp lib="1" loc="(360,420)" name="NOT Gate">
       <a name="width" val="4"/>
     </comp>
-    <comp lib="6" loc="(75,209)" name="Text">
-      <a name="text" val="7=A'"/>
+    <comp lib="6" loc="(77,70)" name="Text">
+      <a name="text" val="0=AB"/>
       <a name="font" val="SansSerif bold 14"/>
-    </comp>
-    <comp lib="6" loc="(81,110)" name="Text">
-      <a name="text" val="2=A+B"/>
-      <a name="font" val="SansSerif bold 14"/>
-    </comp>
-    <comp lib="1" loc="(490,260)" name="NOT Gate">
-      <a name="width" val="4"/>
-    </comp>
-    <comp lib="1" loc="(430,410)" name="OR Gate">
-      <a name="width" val="4"/>
-      <a name="size" val="30"/>
-      <a name="inputs" val="2"/>
     </comp>
     <comp lib="1" loc="(360,370)" name="NOT Gate">
       <a name="width" val="4"/>
     </comp>
-    <comp lib="0" loc="(260,170)" name="Pin">
+    <comp lib="1" loc="(490,260)" name="NOT Gate">
       <a name="width" val="4"/>
-      <a name="label" val="InB"/>
     </comp>
-    <comp lib="1" loc="(430,210)" name="OR Gate">
+    <comp lib="6" loc="(88,130)" name="Text">
+      <a name="text" val="3=(A+B)'"/>
+      <a name="font" val="SansSerif bold 14"/>
+    </comp>
+    <comp lib="1" loc="(440,310)" name="XOR Gate">
       <a name="width" val="4"/>
       <a name="size" val="30"/>
-      <a name="inputs" val="2"/>
     </comp>
-    <comp lib="6" loc="(79,170)" name="Text">
-      <a name="text" val="5=AB'"/>
+    <comp lib="1" loc="(430,160)" name="AND Gate">
+      <a name="width" val="4"/>
+      <a name="size" val="30"/>
+    </comp>
+    <comp lib="1" loc="(480,160)" name="NOT Gate">
+      <a name="width" val="4"/>
+    </comp>
+    <comp lib="6" loc="(92,150)" name="Text">
+      <a name="text" val="4=A Xor B"/>
       <a name="font" val="SansSerif bold 14"/>
     </comp>
     <comp lib="0" loc="(770,150)" name="Pin">
@@ -788,55 +795,48 @@ This file is intended to be loaded by Logisim (http://www.cburch.com/logisim/).
       <a name="width" val="4"/>
       <a name="label" val="LoOut"/>
     </comp>
-    <comp lib="6" loc="(83,189)" name="Text">
-      <a name="text" val="6=A+B'"/>
-      <a name="font" val="SansSerif bold 14"/>
-    </comp>
-    <comp lib="1" loc="(430,260)" name="OR Gate">
+    <comp lib="1" loc="(430,210)" name="OR Gate">
       <a name="width" val="4"/>
       <a name="size" val="30"/>
-      <a name="inputs" val="2"/>
     </comp>
-    <comp lib="1" loc="(430,360)" name="AND Gate">
+    <comp lib="0" loc="(260,170)" name="Pin">
       <a name="width" val="4"/>
-      <a name="size" val="30"/>
-      <a name="inputs" val="2"/>
-    </comp>
-    <comp lib="0" loc="(260,100)" name="Pin">
-      <a name="width" val="4"/>
-      <a name="label" val="InA"/>
+      <a name="label" val="InB"/>
     </comp>
     <comp lib="1" loc="(360,450)" name="NOT Gate">
       <a name="width" val="4"/>
     </comp>
-    <comp lib="1" loc="(480,160)" name="NOT Gate">
-      <a name="width" val="4"/>
+    <comp lib="6" loc="(81,110)" name="Text">
+      <a name="text" val="2=A+B"/>
+      <a name="font" val="SansSerif bold 14"/>
     </comp>
     <comp lib="6" loc="(108,44)" name="Text">
       <a name="text" val="Logic Subcircuit"/>
       <a name="font" val="SansSerif bolditalic 14"/>
     </comp>
-    <comp lib="1" loc="(430,110)" name="AND Gate">
+    <comp lib="1" loc="(430,360)" name="AND Gate">
       <a name="width" val="4"/>
       <a name="size" val="30"/>
-      <a name="inputs" val="2"/>
     </comp>
-    <comp lib="1" loc="(440,310)" name="XOR Gate">
+    <comp lib="1" loc="(430,260)" name="OR Gate">
       <a name="width" val="4"/>
       <a name="size" val="30"/>
-      <a name="inputs" val="2"/>
     </comp>
-    <comp lib="1" loc="(430,160)" name="AND Gate">
-      <a name="width" val="4"/>
-      <a name="size" val="30"/>
-      <a name="inputs" val="2"/>
-    </comp>
-    <comp lib="6" loc="(77,70)" name="Text">
-      <a name="text" val="0=AB"/>
+    <comp lib="6" loc="(75,209)" name="Text">
+      <a name="text" val="7=A'"/>
       <a name="font" val="SansSerif bold 14"/>
     </comp>
-    <comp lib="6" loc="(92,150)" name="Text">
-      <a name="text" val="4=A Xor B"/>
+    <comp lib="0" loc="(710,490)" name="Pin">
+      <a name="facing" val="north"/>
+      <a name="width" val="3"/>
+      <a name="label" val="Sel"/>
+    </comp>
+    <comp lib="1" loc="(430,410)" name="OR Gate">
+      <a name="width" val="4"/>
+      <a name="size" val="30"/>
+    </comp>
+    <comp lib="6" loc="(79,170)" name="Text">
+      <a name="text" val="5=AB'"/>
       <a name="font" val="SansSerif bold 14"/>
     </comp>
   </circuit>
